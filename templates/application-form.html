@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./styles.css">
+    <title>
+      Application Form
+    </title>
+  </head>
+  <body>
+    <h2>Careers at Ubermelon</h2>
+    <div>
+      Thanks for your interest in joining our team! To begin your application,
+      please supply the information requested below.
+    </div>
+    <form action="/application-success" method="POST">
+      <p>
+      First name: <input type="text" name="firstname"><br>
+      Last name: <input type="text" class="boldface" name="lastname">
+      </p>
+      <p>
+        Salary requirement (Enter a number): <input type="text" name="salary">
+      </p>
+      <p>
+        For which role are you applying? Please select one of the following:
+      </p>
+      <p>
+        <input id="software engineer" type="radio" name="job_title" value="sw_eng">
+        <label for="software engineer"> Software Engineer</label><br>
+        <input id="QA engineer" type="radio" name="job_title" value="qa_eng">
+        <label for="QA engineer"> QA Engineer</label><br>
+        <input id="product manager" type="radio" name="job_title" value="pm">
+        <label for="product manager"> Product Manager</label>
+      </p>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
