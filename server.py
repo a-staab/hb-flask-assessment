@@ -18,7 +18,7 @@ def show_landing_page():
 
 @app.route('/application-form')
 def display_form():
-    """Displays job application form."""
+    """Display job application form."""
 
     return render_template("application-form.html")
 
@@ -28,11 +28,16 @@ def show_confirmation():
     """Show confirmation page repeating applicant's name, minimum salary, and
     the role for which they're applying.
     """
+    firstname = request.form.get("firstname")
+    lastname = request.form.get("lastname")
+    job_title = request.form.get("job_title")
+    salary = request.form.get("salary")
 
-# job_app = request.args.get("")
-#         = request.args.get("")
-
-# return 
+    return render_template("application-response.html",
+                           firstname=firstname,
+                           lastname=lastname,
+                           job_title=job_title,
+                           salary=salary)
 
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the
