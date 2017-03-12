@@ -1,10 +1,10 @@
-<!doctype html>
-<html>
-<head>
-    <title>Application Response</title>
-</head>
-<body>
-Thank you, {{ firstname }} {{ lastname }}, for applying to be a {{ job_title }}
-at Ubermelon. Your minimum salary requirement is {{ "{:,.2f}".format(salary|float) }}.
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Application Response{% endblock %}
+{% block content %}
+Thank you, {{ firstname }} {{ lastname }}, for applying to be a {{ job_title }} at Ubermelon. Your minimum salary requirement is
+{% if salary==(salary|float) %}
+    {{"${:,.2f}.".format(salary|float)}}
+{% else %}
+    {{"${:,}.".format(salary|int)}}{% endif %}
+
+{% endblock %}

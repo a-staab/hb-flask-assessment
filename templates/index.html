@@ -1,13 +1,10 @@
-<!doctype html>
-<html>
-<head>
-    <link rel="stylesheet" href="/static/index_styles.css">
-    <title>Ubermelon Corp</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Ubermelon Corp{% endblock %}
+{% block content %}
+<iframe width="853" height="480" src="https://www.youtube.com/embed/
+4dAy9u0_9nM?rel=0&amp;controls=0&amp;showinfo=0" class=movie frameborder="0" 
+allowfullscreen></iframe>
 <h1>Ubermelon Corp</h1>
 <h3>We've got something juicy for you.</h3>
-<a href="/application-form"><h5>Resistance really <i>is</i> futile.</h5></a>
-
-</body>
-</html>
+<a href="/application-form"><h5>(Resistance really <i>is</i> futile...)</h5></a>
+{% endblock %}

@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 from flask_debugtoolbar import DebugToolbarExtension
+from decimal import *
 
 app = Flask(__name__)
 
@@ -18,7 +19,7 @@ def show_landing_page():
 def display_form():
     """Display job application form."""
 
-    roles = ["Software Engineer", "QA engineer", "Product Manager"]
+    roles = ["Software Engineer", "QA Engineer", "Product Manager"]
     return render_template("application-form.html",
                            jobs=roles)
 

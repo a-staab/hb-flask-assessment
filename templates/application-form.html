@@ -1,12 +1,6 @@
-<!doctype html>
-<html>
-  <head>
-    <link rel="stylesheet" href="/static/styles.css">
-    <title>
-      Application Form
-    </title>
-  </head>
-  <body>
+{% extends 'base.html' %}
+{% block title %}Application Form{% endblock %}
+{% block content %}
     <h2>Careers at Ubermelon</h2>
     <div>
       Thanks for your interest in joining our team! To begin your application,
@@ -31,5 +25,4 @@
       </p>
       <input type="submit" value="Submit" class="accessible">
     </form>
-  </body>
-</html>
+{% endblock %}
