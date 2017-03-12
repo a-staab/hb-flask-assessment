@@ -1,9 +1,13 @@
-h1 {
- font-family: sans-serif;
- color: #ef2676;
+.accessible {
+    background-color: yellow;
 }
 
-h3 {
- font-family: sans-serif;
- color: #ef2676;
+#emphasis {
+    font-weight: bold;
+}
+
+div {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 6px;
 }

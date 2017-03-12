@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
     <title>
       Application Form
     </title>
@@ -14,24 +14,22 @@
     </div>
     <form action="/application-success" method="POST">
       <p>
-      First name: <input type="text" name="firstname"><br>
-      Last name: <input type="text" class="boldface" name="lastname">
+      First name: <input type="text" name="firstname" class="accessible"><br>
+      Last name: <input type="text" name="lastname" class="accessible" id="emphasis">
       </p>
       <p>
-        Salary requirement (Enter a number): <input type="text" name="salary">
+        Salary requirement (Enter a number): <input type="text" name="salary" class="accessible">
       </p>
       <p>
-        For which role are you applying? Please select one of the following:
+        <label for="job_title">For which role are you applying? Please select one of the following:</label>
       </p>
-      <p>
-        <input type="radio" name="job_title" value="sw_eng" id="software-engineer">
-        <label for="software-engineer"> Software Engineer</label><br>
-        <input type="radio" name="job_title" value="qa_eng" id="QA-engineer">
-        <label for="QA-engineer"> QA Engineer</label><br>
-        <input type="radio" name="job_title" value="pm" id="product-manager">
-        <label for="product-manager"> Product Manager</label>
+        <select id="job_title" name="select" class="accessible">
+          {% for job in jobs %} 
+          <option value="{{ job }}">{{ job }}</option>
+          {% endfor %}
+        </select>
       </p>
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" class="accessible">
     </form>
   </body>
 </html>

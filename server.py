@@ -1,9 +1,7 @@
 from flask import Flask, request, render_template
 from flask_debugtoolbar import DebugToolbarExtension
 
-
 app = Flask(__name__)
-
 
 # Required to use Flask sessions and the debug toolbar
 app.secret_key = "ABC"
@@ -20,17 +18,19 @@ def show_landing_page():
 def display_form():
     """Display job application form."""
 
-    return render_template("application-form.html")
+    roles = ["Software Engineer", "QA engineer", "Product Manager"]
+    return render_template("application-form.html",
+                           jobs=roles)
 
 
 @app.route('/application-success', methods=["POST"])
 def show_confirmation():
-    """Show confirmation page repeating applicant's name, minimum salary, and
-    the role for which they're applying.
+    """Show confirmation page repeating applicant's name, the role for which
+    they're applying, and the minimum salary they would accept.
     """
     firstname = request.form.get("firstname")
     lastname = request.form.get("lastname")
-    job_title = request.form.get("job_title")
+    job_title = request.form.get("select")
     salary = request.form.get("salary")
 
     return render_template("application-response.html",

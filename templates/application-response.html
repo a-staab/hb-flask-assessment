@@ -4,10 +4,7 @@
     <title>Application Response</title>
 </head>
 <body>
-
 Thank you, {{ firstname }} {{ lastname }}, for applying to be a {{ job_title }}
-at Ubermelon. Your minimum salary requirement is {{ salary }}.
-
-
+at Ubermelon. Your minimum salary requirement is {{ "{:,.2f}".format(salary|float) }}.
 </body>
 </html>
