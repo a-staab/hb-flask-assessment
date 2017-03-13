@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 {% block title %}Application Response{% endblock %}
 {% block content %}
-Thank you, {{ firstname }} {{ lastname }}, for applying to be a {{ job_title }} at Ubermelon. Your minimum salary requirement is
+Thank you, {{ firstname }} {{ lastname }}, for applying to be a {{ job_title }} 
+at Ubermelon. Your minimum salary requirement is
 {% if salary==(salary|float) %}
     {{"${:,.2f}.".format(salary|float)}}
 {% else %}
     {{"${:,}.".format(salary|int)}}{% endif %}
+{% endblock %}.
 
-{% endblock %}
+
+{# ^--Currency handling isn't quite there, though it handles "100000" and
+"100000.00" well. Would need further work to get it to render properly if a 
+separator comma is entered by user and to show a float if a float is entered.
+Were we supposed to be able to do this in Jinja or in Python? #}
